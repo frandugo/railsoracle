@@ -1,0 +1,27 @@
+<%= form_for(tpdoc) do |f| %>
+  <% if tpdoc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tpdoc.errors.count, "error") %> prohibited this tpdoc from being saved:</h2>
+
+      <ul>
+      <% tpdoc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"Tipo de Documento" %>
+    <%= f.text_field :tipodoc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"documento id" %>
+    <%= f.number_field :"documento_id" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

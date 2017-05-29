@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tpasis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nomtpasi</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tpasis.each do |tpasi| %>
+      <tr>
+        <td><%= tpasi.nomtpasi %></td>
+        <td><%= link_to 'Show', tpasi %></td>
+        <td><%= link_to 'Edit', edit_tpasi_path(tpasi) %></td>
+        <td><%= link_to 'Destroy', tpasi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tpasi', new_tpasi_path %>

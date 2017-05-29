@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pensums</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idasi</th>
+      <th>Idcu</th>
+      <th>Fechai</th>
+      <th>Fechaf</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pensums.each do |pensum| %>
+      <tr>
+        <td><%= pensum.asignatura_id %></td>
+        <td><%= pensum.curso_id %></td>
+        <td><%= pensum.fechai %></td>
+        <td><%= pensum.fechaf %></td>
+        <td><%= link_to 'Show', pensum %></td>
+        <td><%= link_to 'Edit', edit_pensum_path(pensum) %></td>
+        <td><%= link_to 'Destroy', pensum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pensum', new_pensum_path %>

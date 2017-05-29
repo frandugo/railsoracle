@@ -1,0 +1,2 @@
+class Dtnotum < ApplicationRecord
+end

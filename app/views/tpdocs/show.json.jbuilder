@@ -1,0 +1,1 @@
+json.partial! "tpdocs/tpdoc", tpdoc: @tpdoc

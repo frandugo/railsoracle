@@ -1,0 +1,27 @@
+<%= form_for(jornada) do |f| %>
+  <% if jornada.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(jornada.errors.count, "error") %> prohibited this jornada from being saved:</h2>
+
+      <ul>
+      <% jornada.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :jornada %>
+    <%= f.text_field :jornada %>
+  </div>
+
+  <div class="field">
+    <%= f.label :idgru %>
+    <%= f.number_field :grupo_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

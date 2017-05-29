@@ -1,0 +1,2 @@
+class Pensum < ApplicationRecord
+end

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idgru: 1
+  idcu: 1
+  idasi: 1
+  iddoce: 1
+  idpe: 1
+
+two:
+  idgru: 1
+  idcu: 1
+  idasi: 1
+  iddoce: 1
+  idpe: 1

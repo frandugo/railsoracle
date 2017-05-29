@@ -1,0 +1,2 @@
+module DtnotaHelper
+end

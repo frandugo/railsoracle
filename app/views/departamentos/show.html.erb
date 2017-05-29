@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nomdep:</strong>
+  <%= @departamento.nomdep %>
+</p>
+<h2>Municipios</h2>
+
+<% if @departamento.municipios.any? %>
+<ul>
+  <%@departamento.municipios.each do |municipios|%>
+  <li><%= link_to municipios, municipios%></li>
+  <% end %>
+</ul>
+<%else%>
+  <p>no disponible</p>
+<% end %>
+
+<%= link_to 'Edit', edit_departamento_path(@departamento) %> |
+<%= link_to 'Back', departamentos_path %>

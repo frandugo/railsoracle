@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posgrados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulación</th>
+      <th>Numero de titulo de posgrado</th>
+      <th>profesion_id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posgrados.each do |posgrado| %>
+      <tr>
+        <td><%= posgrado.nompos %></td>
+        <td><%= posgrado.numtitulo %></td>
+        <td><%= posgrado.profesion_id %></td>
+        <td><%= link_to 'Show', posgrado %></td>
+        <td><%= link_to 'Edit', edit_posgrado_path(posgrado) %></td>
+        <td><%= link_to 'Destroy', posgrado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Posgrado', new_posgrado_path %>

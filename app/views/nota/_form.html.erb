@@ -1,0 +1,91 @@
+<%= form_for(notum) do |f| %>
+  <% if notum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(notum.errors.count, "error") %> prohibited this notum from being saved:</h2>
+
+      <ul>
+      <% notum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"Numero id de Estudiante" %>
+    <%= f.number_field :estudiante_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Numero id de Docente" %>
+    <%= f.number_field :docente_id %>
+  </div>
+
+  <% plsql.paq_est.retorna_cursos do |high_score| %>
+    <% @prueba = high_score.fetch_all %>
+  <% end %>
+  <div class="field">
+    <%= f.label :"cursos" %>
+    <%i=0%>
+    <%= f.select :curso_id do %>
+  <% @prueba.each do %>
+    <%= content_tag(:option, @prueba[i][1], value: @prueba[i][0]) %>
+    <%i = i+1%>
+  <% end %>
+<% end %>
+  </div>
+
+
+    <% plsql.paq_est.retorna_grupos do |high_score| %>
+      <% @prueba = high_score.fetch_all %>
+    <% end %>
+    <div class="field">
+      <%= f.label :"grupo" %>
+      <%i=0%>
+      <%= f.select :grupo_id do %>
+    <% @prueba.each do %>
+      <%= content_tag(:option, @prueba[i][0], value: @prueba[i][0]) %>
+      <%i = i+1%>
+    <% end %>
+  <% end %>
+    </div>
+
+
+  <% plsql.paq_est.retorna_asignaturas do |high_score| %>
+    <% @prueba = high_score.fetch_all %>
+  <% end %>
+  <div class="field">
+    <%= f.label :"asignatura" %>
+    <%i=0%>
+    <%= f.select :asignatura_id do %>
+  <% @prueba.each do %>
+    <%= content_tag(:option, @prueba[i][1], value: @prueba[i][0]) %>
+    <%i = i+1%>
+  <% end %>
+<% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nota1 %>
+    <%= f.number_field :nota1, in: 0.0..5.0, step: 0.1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nota2 %>
+    <%= f.number_field :nota2, in: 0.0..5.0, step: 0.1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nota3 %>
+    <%= f.number_field :nota3, in: 0.0..5.0, step: 0.1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nota4 %>
+    <%= f.number_field :nota4, in: 0.0..5.0, step: 0.1 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

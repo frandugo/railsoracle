@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idnom:</strong>
+  <%= @dtnotum.estudiante_id %>
+</p>
+
+<p>
+  <strong>Taller:</strong>
+  <%= @dtnotum.taller %>
+</p>
+
+<p>
+  <strong>Quiz:</strong>
+  <%= @dtnotum.quiz %>
+</p>
+
+<p>
+  <strong>Examen:</strong>
+  <%= @dtnotum.examen %>
+</p>
+
+<p>
+  <strong>Seguimiento:</strong>
+  <%= @dtnotum.seguimiento %>
+</p>
+
+<p>
+  <strong>Idencnotas:</strong>
+  <%= @dtnotum.encnota_id %>
+</p>
+
+<%= link_to 'Edit', edit_dtnotum_path(@dtnotum) %> |
+<%= link_to 'Back', dtnota_path %>

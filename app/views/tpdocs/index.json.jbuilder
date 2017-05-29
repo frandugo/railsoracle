@@ -1,0 +1,1 @@
+json.array! @tpdocs, partial: 'tpdocs/tpdoc', as: :tpdoc

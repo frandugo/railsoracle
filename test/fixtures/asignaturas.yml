@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nomasi: MyString
+  numasi: MyString
+  idtpasi: 1
+
+two:
+  nomasi: MyString
+  numasi: MyString
+  idtpasi: 1

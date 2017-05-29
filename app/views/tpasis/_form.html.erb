@@ -1,0 +1,22 @@
+<%= form_for(tpasi) do |f| %>
+  <% if tpasi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tpasi.errors.count, "error") %> prohibited this tpasi from being saved:</h2>
+
+      <ul>
+      <% tpasi.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nomtpasi %>
+    <%= f.text_field :nomtpasi %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

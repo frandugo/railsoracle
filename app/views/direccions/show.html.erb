@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @direccion.direccion %>
+</p>
+
+<p>
+  <strong>Idmun:</strong>
+  <%= @direccion.municipio_id %>
+</p>
+
+<p>
+  <strong>Idnom:</strong>
+  <%= @direccion.estudiante_id %>
+</p>
+
+<%= link_to 'Edit', edit_direccion_path(@direccion) %> |
+<%= link_to 'Back', direccions_path %>

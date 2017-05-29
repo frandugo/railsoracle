@@ -1,0 +1,52 @@
+<%= form_for(acudiente) do |f| %>
+  <% if acudiente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(acudiente.errors.count, "error") %> prohibited this acudiente from being saved:</h2>
+
+      <ul>
+      <% acudiente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"Primer Nombre" %>
+    <%= f.text_field :nom1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Segundo Nombre" %>
+    <%= f.text_field :nom2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Primer Apellido" %>
+    <%= f.text_field :ape1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Segundo Apellido" %>
+    <%= f.text_field :ape2 %>
+  </div>
+
+  <h2>documento</h2>
+  <%= f.fields_for :documentos do |documento|%>
+
+      <div class="field">
+        <%= documento.label :"tipo documento" %>
+        <%= documento.select :tipodoc, options_for_select(['TI','CC'])%>
+      </div>
+
+      <div class="field">
+        <%= documento.label :"numero documento" %>
+        <%= documento.text_field :numdoc %>
+      </div>
+  <% end %>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

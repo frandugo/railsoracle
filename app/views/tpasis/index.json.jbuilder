@@ -1,0 +1,1 @@
+json.array! @tpasis, partial: 'tpasis/tpasi', as: :tpasi

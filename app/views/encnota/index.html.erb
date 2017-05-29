@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Encnota</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idgru</th>
+      <th>Idcu</th>
+      <th>Idasi</th>
+      <th>Iddoce</th>
+      <th>Idpe</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @encnota.each do |encnotum| %>
+      <tr>
+        <td><%= encnotum.grupo_id %></td>
+        <td><%= encnotum.curso_id %></td>
+        <td><%= encnotum.asignatura_id %></td>
+        <td><%= encnotum.docente_id %></td>
+        <td><%= encnotum.periodo_id %></td>
+        <td><%= link_to 'Show', encnotum %></td>
+        <td><%= link_to 'Edit', edit_encnotum_path(encnotum) %></td>
+        <td><%= link_to 'Destroy', encnotum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Encnotum', new_encnotum_path %>

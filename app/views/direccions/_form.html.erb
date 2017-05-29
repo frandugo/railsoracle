@@ -1,0 +1,40 @@
+<%= form_for(direccion) do |f| %>
+  <% if direccion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(direccion.errors.count, "error") %> prohibited this direccion from being saved:</h2>
+
+      <ul>
+      <% direccion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :direccion %>
+    <%= f.text_field :direccion %>
+  </div>
+  <% plsql.paq_est.retorna_datos do |high_score| %>
+    <% @prueba = high_score.fetch_all %>
+  <% end %>
+  <div class="field">
+    <%= f.label :"municipio" %>
+    <%i=0%>
+    <%= f.select(:municipio_id) do %>
+  <% @prueba.each do %>
+    <%= content_tag(:option, @prueba[i][1], value: @prueba[i][0]) %>
+    <%i = i+1%>
+  <% end %>
+  <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :idnom %>
+    <%= f.number_field :estudiante_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

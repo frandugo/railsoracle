@@ -1,0 +1,67 @@
+<%= form_for(docente) do |f| %>
+  <% if docente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(docente.errors.count, "error") %> prohibited this docente from being saved:</h2>
+
+      <ul>
+      <% docente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"Primer Nombre" %>
+    <%= f.text_field :nom1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Segundo Nombre" %>
+    <%= f.text_field :nom2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Primer Apellido" %>
+    <%= f.text_field :ape1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Segundo Apellido" %>
+    <%= f.text_field :ape2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"tipo documento" %>
+    <%= f.select :tipodoc, options_for_select(['TI','CC'])%>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Numero de documento" %>
+    <%= f.text_field :numdoc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Correo" %>
+    <%= f.text_field :correo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"telefono" %>
+    <%= f.text_field :telefono %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Numero de tarjeta prosional" %>
+    <%= f.text_field :tarpro %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Titulo Profesional" %>
+    <%= f.text_field :nompro %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,1 @@
+json.array! @encnota, partial: 'encnota/encnotum', as: :encnotum

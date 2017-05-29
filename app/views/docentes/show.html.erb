@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>"Primer Apellido":</strong>
+  <%= @docente.nom1 %>
+</p>
+
+<p>
+  <strong>"Segundo Apellido":</strong>
+  <%= @docente.nom2 %>
+</p>
+
+<p>
+  <strong>"Primer Apellido":</strong>
+  <%= @docente.ape1 %>
+</p>
+
+<p>
+  <strong>"Segundo Apellido":</strong>
+  <%= @docente.ape2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_docente_path(@docente) %> |
+<%= link_to 'Back', docentes_path %>

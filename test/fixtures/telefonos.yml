@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  telefono: MyString
+  idnom: 1
+  iddoce: 1
+
+two:
+  telefono: MyString
+  idnom: 1
+  iddoce: 1

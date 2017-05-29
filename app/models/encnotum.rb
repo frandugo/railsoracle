@@ -1,0 +1,2 @@
+class Encnotum < ApplicationRecord
+end

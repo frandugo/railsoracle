@@ -1,0 +1,2 @@
+class Tpasi < ApplicationRecord
+end

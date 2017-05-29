@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  direccion: MyString
+  idmun: 1
+  idnom: 1
+
+two:
+  direccion: MyString
+  idmun: 1
+  idnom: 1

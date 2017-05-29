@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tarpro: MyString
+  nompro: MyString
+  iddoce: 1
+
+two:
+  tarpro: MyString
+  nompro: MyString
+  iddoce: 1

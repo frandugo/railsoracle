@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Periodo:</strong>
+  <%= @periodo.periodo %>
+</p>
+
+<p>
+  <strong>Fechai:</strong>
+  <%= @periodo.fechai %>
+</p>
+
+<p>
+  <strong>Fechaf:</strong>
+  <%= @periodo.fechaf %>
+</p>
+
+<%= link_to 'Edit', edit_periodo_path(@periodo) %> |
+<%= link_to 'Back', periodos_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tarjeta Profesional:</strong>
+  <%= @profesion.tarpro %>
+</p>
+
+<p>
+  <strong>Titulacion:</strong>
+  <%= @profesion.nompro %>
+</p>
+
+<p>
+  <strong>docente_id:</strong>
+  <%= @profesion.docente_id %>
+</p>
+
+<%= link_to 'Edit', edit_profesion_path(@profesion) %> |
+<%= link_to 'Back', profesions_path %>

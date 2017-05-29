@@ -1,0 +1,1 @@
+json.array! @posgrados, partial: 'posgrados/posgrado', as: :posgrado

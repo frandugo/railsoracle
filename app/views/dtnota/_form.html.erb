@@ -1,0 +1,47 @@
+<%= form_for(dtnotum) do |f| %>
+  <% if dtnotum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dtnotum.errors.count, "error") %> prohibited this dtnotum from being saved:</h2>
+
+      <ul>
+      <% dtnotum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :idnom %>
+    <%= f.number_field :estudiante_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :taller %>
+    <%= f.number_field :taller %>
+  </div>
+
+  <div class="field">
+    <%= f.label :quiz %>
+    <%= f.number_field :quiz %>
+  </div>
+
+  <div class="field">
+    <%= f.label :examen %>
+    <%= f.number_field :examen %>
+  </div>
+
+  <div class="field">
+    <%= f.label :seguimiento %>
+    <%= f.number_field :seguimiento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :idencnotas %>
+    <%= f.number_field :encnota_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

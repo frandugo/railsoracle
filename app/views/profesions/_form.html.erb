@@ -1,0 +1,32 @@
+<%= form_for(profesion) do |f| %>
+  <% if profesion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profesion.errors.count, "error") %> prohibited this profesion from being saved:</h2>
+
+      <ul>
+      <% profesion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"Numero de tarjeta prosional" %>
+    <%= f.text_field :tarpro %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Titulo Profesional" %>
+    <%= f.text_field :nompro %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"docente id" %>
+    <%= f.number_field :docente_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

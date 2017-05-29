@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulación de Posgrado:</strong>
+  <%= @posgrado.nompos %>
+</p>
+
+<p>
+  <strong>Numero de titulo:</strong>
+  <%= @posgrado.numtitulo %>
+</p>
+
+<p>
+  <strong>profesion_id:</strong>
+  <%= @posgrado.profesion_id %>
+</p>
+
+<%= link_to 'Edit', edit_posgrado_path(@posgrado) %> |
+<%= link_to 'Back', posgrados_path %>

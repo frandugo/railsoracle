@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @correo.correo %>
+</p>
+
+<p>
+  <strong>Idnom:</strong>
+  <%= @correo.estudiante_id %>
+</p>
+
+<p>
+  <strong>Iddoce:</strong>
+  <%= @correo.docente_id %>
+</p>
+
+<%= link_to 'Edit', edit_correo_path(@correo) %> |
+<%= link_to 'Back', correos_path %>

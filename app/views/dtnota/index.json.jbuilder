@@ -1,0 +1,1 @@
+json.array! @dtnota, partial: 'dtnota/dtnotum', as: :dtnotum

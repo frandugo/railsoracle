@@ -1,0 +1,27 @@
+<%= form_for(documento) do |f| %>
+  <% if documento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(documento.errors.count, "error") %> prohibited this documento from being saved:</h2>
+
+      <ul>
+      <% documento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"tipo documento" %>
+    <%= f.select :tipodoc, options_for_select(['TI','CC'])%>
+  </div>
+
+  <div class="field">
+    <%= f.label :"numero documento" %>
+    <%= f.text_field :numdoc %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

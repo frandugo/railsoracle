@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tpdocs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo de Documento</th>
+      <th>documento_id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tpdocs.each do |tpdoc| %>
+      <tr>
+        <td><%= tpdoc.tipodoc %></td>
+        <td><%= tpdoc.documento_id %></td>
+        <td><%= link_to 'Show', tpdoc %></td>
+        <td><%= link_to 'Edit', edit_tpdoc_path(tpdoc) %></td>
+        <td><%= link_to 'Destroy', tpdoc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tpdoc', new_tpdoc_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idnom: 1
+  taller: 1
+  quiz: 1
+  examen: 1
+  seguimiento: 1
+  idencnotas: 1
+
+two:
+  idnom: 1
+  taller: 1
+  quiz: 1
+  examen: 1
+  seguimiento: 1
+  idencnotas: 1

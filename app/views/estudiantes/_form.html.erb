@@ -1,0 +1,142 @@
+<%= form_for(estudiante) do |f| %>
+  <% if estudiante.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(estudiante.errors.count, "error") %> prohibited this estudiante from being saved:</h2>
+
+      <ul>
+      <% estudiante.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nom1 %>
+    <%= f.text_field :nom1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nom2 %>
+    <%= f.text_field :nom2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ape1 %>
+    <%= f.text_field :ape1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ape2 %>
+    <%= f.text_field :ape2 %>
+  </div>
+
+  <% plsql.paq_est.retorna_cursos do |high_score| %>
+    <% @prueba = high_score.fetch_all %>
+  <% end %>
+  <div class="field">
+    <%= f.label :"cursos" %>
+    <%i=0%>
+    <%= f.select :curso_id do %>
+  <% @prueba.each do %>
+    <%= content_tag(:option, @prueba[i][1], value: @prueba[i][0]) %>
+    <%i = i+1%>
+  <% end %>
+<% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Grupo" %>
+    <%= f.select :grupo_id, options_for_select(['A','B'])%>
+  </div>
+
+  <%= f.fields_for :documentos do |documentos| %>
+  <div class="field">
+    <%= documentos.label :"tipo documento" %>
+    <%= documentos.select :tipodoc, options_for_select(['TI','CC'])%>
+  </div>
+
+  <div class="field">
+    <%= documentos.label :"numero documento" %>
+    <%= documentos.text_field :numdoc %>
+  </div>
+  <% end %>
+
+  <% plsql.paq_est.retorna_datos do |high_score| %>
+    <% @prueba = high_score.fetch_all %>
+  <% end %>
+  <%= f.fields_for :direccions do |direccion| %>
+  <div class="field">
+    <%= direccion.label :"municipio" %>
+    <%i=0%>
+    <%= direccion.select :municipio_id do %>
+  <% @prueba.each do %>
+    <%= content_tag(:option, @prueba[i][1], value: @prueba[i][0]) %>
+    <%i = i+1%>
+  <% end %>
+<% end %>
+  </div>
+
+  <div class="field">
+    <%= direccion.label :"direccion" %>
+    <%= direccion.text_field :direccion %>
+  </div>
+
+  <% end %>
+
+  <h2>correos</h2>
+    <%= f.fields_for :correos do |correos|%>
+    <div class="field">
+      <%= correos.label :"Correo" %>
+      <%= correos.text_field :correo %>
+    </div>
+    <% end %>
+
+    <h2>telefono</h2>
+      <%= f.fields_for :telefonos do |correos|%>
+      <div class="field">
+        <%= correos.label :"telefono" %>
+        <%= correos.text_field :telefono %>
+      </div>
+      <% end %>
+      <%=@estudiante.id%>
+        <h2>Acudiente</h2>
+        <%= f.fields_for :acudientes do |acudiente|%>
+
+            <div class="field">
+              <%= acudiente.label :"Primer Nombre" %>
+              <%= acudiente.text_field :nom1 %>
+            </div>
+
+            <div class="field">
+              <%= acudiente.label :"Segundo Nombre" %>
+              <%= acudiente.text_field :nom2 %>
+            </div>
+
+            <div class="field">
+              <%= acudiente.label :"Primer Apellido" %>
+              <%= acudiente.text_field :ape1 %>
+            </div>
+
+            <div class="field">
+              <%= acudiente.label :"Segundo Apellido" %>
+              <%= acudiente.text_field :ape2 %>
+            </div>
+
+            <div class="field">
+              <%= acudiente.label :"tipo documento" %>
+              <%= acudiente.select :tipodoc, options_for_select(['TI','CC'])%>
+            </div>
+
+            <div class="field">
+              <%= acudiente.label :"numero documento" %>
+              <%= acudiente.text_field :numdoc %>
+            </div>
+        <% end %>
+
+  <br>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

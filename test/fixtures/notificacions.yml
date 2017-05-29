@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  notificacion: MyText
+  iddoce: 1
+  idnom: 1
+
+two:
+  notificacion: MyText
+  iddoce: 1
+  idnom: 1

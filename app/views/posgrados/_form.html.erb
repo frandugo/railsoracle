@@ -1,0 +1,32 @@
+<%= form_for(posgrado) do |f| %>
+  <% if posgrado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(posgrado.errors.count, "error") %> prohibited this posgrado from being saved:</h2>
+
+      <ul>
+      <% posgrado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :"Titulacion de Posgrado" %>
+    <%= f.text_field :nompos %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Numero de titulo" %>
+    <%= f.text_field :numtitulo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"profesion id" %>
+    <%= f.number_field :profesion_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,1 @@
+json.partial! "dtnota/dtnotum", dtnotum: @dtnotum

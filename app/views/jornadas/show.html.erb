@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Jornada:</strong>
+  <%= @jornada.jornada %>
+</p>
+
+<p>
+  <strong>Idgru:</strong>
+  <%= @jornada.grupo_id %>
+</p>
+
+<%= link_to 'Edit', edit_jornada_path(@jornada) %> |
+<%= link_to 'Back', jornadas_path %>
